@@ -1,0 +1,126 @@
+//Car myObj1 = new Car();
+////Console.WriteLine(myObj.color); Car myObj1 = new Car();
+//Car myObj2 = new Car();
+//Console.WriteLine(myObj1.color);
+//Console.WriteLine(myObj2.color);
+//public class Car
+//{
+//   public string color = "red";
+//}
+// The class
+//MyClass myCar = new MyClass();
+//myCar.fullThrottle();
+//class MyClass
+//{
+//    // Class members
+//    string color = "red";        // field
+//    int maxSpeed = 200;          // field
+//    public void fullThrottle()   // method
+//    {
+//        Console.WriteLine("The car is going as fast as it can!");
+//    }
+//}
+//Car myCar = new Car();
+//class Car
+//{
+//    public string model;  // Create a field
+
+//    // Create a class constructor for the Car class
+//    public Car()
+//    {
+//        model = "Mustang"; // Set the initial value for model
+//    }
+
+
+//}
+//Car Ford = new Car("Mustang", "Red", 1969);
+//Console.WriteLine(Ford.color + " " + Ford.year + " " + Ford.model);
+//class Car
+//{
+//    public string model;
+//    public string color;
+//    public int year;
+
+//    // Create a class constructor with multiple parameters
+//    public Car(string modelName, string modelColor, int modelYear)
+//    {
+//        model = modelName;
+//        color = modelColor;
+//        year = modelYear;
+//    }
+
+
+//}
+//public static class TemperatureConverter
+//{
+//    public static double CelsiusToFahrenheit(string temperatureCelsius)
+//    {
+//        // Convert argument to double for calculations.
+//        double celsius = Double.Parse(temperatureCelsius);
+//        // Convert Celsius to Fahrenheit.
+//        double fahrenheit = (celsius * 9 / 5) + 32;
+//        return fahrenheit;
+//    }
+//    public static double FahrenheitToCelsius(string temperatureFahrenheit)
+//    {
+//        // Convert argument to double for calculations.
+//        double fahrenheit = Double.Parse(temperatureFahrenheit);
+//        // Convert Fahrenheit to Celsius.
+//        double celsius = (fahrenheit - 32) * 5 / 9;
+//        return celsius;
+//    }
+//}
+//public class Automobile
+//{
+//    public static int NumberOfWheels = 4;
+//    public static int SizeOfGasTank
+//    {
+//        get
+//        {
+//            return 15;
+//        }
+//    }
+//    public static void Drive() { }
+//    public static event EventType? RunOutOfGas;
+//    // Other non-static fields and properties...
+//}
+//Automobile.Drive();
+//int i = Automobile.NumberOfWheels;
+//publicThe code is accessible for all classes
+//privateThe code is only accessible within the same class
+//protectedThe code is accessible within the same class, or in a class that is inherited from that class. You will learn more about inheritance in a later chapter
+//internalThe code is only accessible within its own assembly, but not from another assembly. You will learn more about this in a later chapter
+Bank b1 = new Bank(1000000);
+Console.WriteLine("Current bonus percent:" + Bank.GetBonus());
+Console.WriteLine("Your deposit on {0:C}, you can take in cash dept: {1:C}", 10000, b1.GetPercent(10000));
+class Bank
+{
+    private double _currentBalance;
+    private static double _bonus;
+    public Bank(double balance)
+    {
+        _currentBalance = balance;
+    }
+    static Bank()
+    {
+        _bonus = 1.04;
+    }
+    public static void SetBonus(double newRate)
+    {
+        _bonus = newRate;
+    }
+    public static double GetBonus()
+    {
+        return _bonus;
+    }
+    public double GetPercent(double summa)
+    {
+        if ((_currentBalance - summa) > 0)
+        {
+            double percent = summa * _bonus;
+            _currentBalance -= percent;
+            return percent;
+        }
+        return -1;
+    }
+}
