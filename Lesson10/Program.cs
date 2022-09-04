@@ -40,3 +40,4 @@ namespace BookLibrary
         public static BookShelf ComedyBook2 = new BookShelf("Рай", "Данте Алигьери", "Comedy ", "1320" );
     }
 }
+//checked
